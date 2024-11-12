@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Restaurant Form</title>
+    <!-- Setting CSS style for our website -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/deleteRestaurant.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- Creating components for our navigation bar -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/attractions">Attractions</a>
+        <a href="/restaurant">Restaurants</a>
+        <a href="/new_restaurant">New Restaurant</a>
+    </div>
+    <!-- Script for handling users click events on the submission -->
+    <% for (let i = 0; i < restaurantData.length; i++) { %>
+    <article class="restaurant-grid">
+        <img src="<% restaurantData[i].photo %>">
+        <div class="card content">
+            <p> <%= restaurantData[i].id %> </p>
+            <p> <%= restaurantData[i].name %></p>
+            <p> <%= restaurantData[i].address %></p>
+            <p> <%= restaurantData[i].phone %></p>
+            <img src="<%= restaurantData[i].photo %>"/>
+            <button class="deleteBtn" id="<%= restaurantData[i].id %>">Delete</button>
+        </div>
+    </article>
+    <% } %>
+</body>
+</html>

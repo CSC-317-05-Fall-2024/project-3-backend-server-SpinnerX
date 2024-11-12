@@ -3,77 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Restaurant Form</title>
+    <title>Home</title>
     <!-- Setting CSS style for our website -->
     <link rel="stylesheet" href="styles.css">
-    <style>
-    </style>
 </head>
 <body>
     <!-- Creating components for our navigation bar -->
     <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#">Attractions</a>
-        <a href="#">Restaurants</a>
-        <a href="#">New Restaurant</a>
+        <a href="/">Home</a>
+        <a href="/attractions">Attractions</a>
+        <a href="/restaurant">Restaurants</a>
+        <a href="/new_restaurant">New Restaurant</a>
     </div>
-    <div class="form-container">
-        <h1>New Restaurant Form</h1>
-        <form id="restaurantForm">
-            <!-- Per component of our restaurant formn we set them as a requirement to the user. -->
-            <label for="restaurantName">Restaurant Name:</label>
-            <input type="text" id="restaurantName" name="restaurantName" required>
-            
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="text" id="phoneNumber" name="phoneNumber" required>
-            
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
-            
-            <label for="photoUrl">Photo URL:</label>
-            <input type="text" id="photoUrl" name="photoUrl">
-            
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-    <div class="card-container" id="cardContainer"></div>
+    <div class="form-container">Home Page</div>
     
-    <!-- Script for handling users click events on the submission -->
-    <script>
-        <!-- When submit button is clicked we submit per inputed task>
-        document.getElementById('restaurantForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            <!-- Extracting from our html on request to retrieve the values that are inputted by the user -->
-            const name = document.getElementById('restaurantName').value;
-            const phone = document.getElementById('phoneNumber').value;
-            const address = document.getElementById('address').value;
-            const photoUrl = document.getElementById('photoUrl').value || 'https://picsum.photos/200/300'; // Fallback image
-            
-            <!-- Getting the element ID per card that is created -->
-            const cardContainer = document.getElementById('cardContainer');
-            
-            <!-- Once we get the card container, we set the image to our src set by the html -->
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <img src="${photoUrl}" alt="Restaurant Photo">
-                <div class="card-content">
-                    <p>${name}</p>
-                    <p>${address}</p>
-                    <p>${phone}</p>
-                    <!-- This is a button that will be used to remove the element from the parent element-->
-                    <span class="remove-btn" onclick="this.parentElement.parentElement.remove()">X</span>
-                </div>
-            `;
-            
-            <!-- How we append our cards everytime a user creates a restaurant card from the restaurant form -->
-            cardContainer.appendChild(card);
-            
-            // Reset the form
-            this.reset();
-        });
-    </script>
 </body>
 </html>
-
